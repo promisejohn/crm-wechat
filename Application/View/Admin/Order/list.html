@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+
+
+
+
+
+
+<body>
+<div class="main">
+    <div class="right">
+        <ul>
+            <li>
+                <div class="r_div" align="center">
+                    <div  style="float:left">
+                        <img src="./public/imges/base1.gif"/>预约处理
+                    </div>
+                </div>
+
+
+
+
+                <div class="r_div1">
+                    <?php foreach($row as $val):?>
+                    <form action="index.php?c=Order&p=Admin&a=update" method="post">
+                        <table>
+                            <tr>
+                                <td>
+
+                                <span style="float:left;">
+                                    <table align="center">
+                                        <tr><td>预约号:</td><td><input type="text" value="<?php echo $val['order_id']?>" name="order_id"></td></tr>
+                                        <tr><td>电话:</td><td><input type="text" value="<?php echo $val['phone']?>" name="phone"></td></tr>
+                                        <tr><td>姓名:</td><td><input type="text" value="<?php echo $val['reallyName']?>" name="reallyName"></td></tr>
+                                        <tr><td>预约美发师:</td><td><input type="text" value="<?php echo $val['realname']?>" name="realname"></td></tr>
+                                        <tr><td>套餐:</td><td><input type="text" value="<?php echo $val['name']?>" name="name"></td></tr>
+                                        <tr><td>备注:</td><td><input type="text" value="<?php echo $val['content']?>" name="content"></td></tr>
+                                        <tr><td>预约日期:</td><td><input type="text" value="<?php echo $val['date']?>" name="date"></td></tr>
+                                        <tr><td>预约状态:</td><td><select name="status">
+                                            <option>未处理</option>
+                                            <option>成功</option>
+                                            <option>失败</option>
+                                        </select></td></tr>
+                                        <tr><td>回复信息:</td><td><input type="text" value="<?php echo $val['reply']?>" name="reply"></td></tr>
+                                        <tr><td colspan="2" align="center"><input type="submit" value="处理" ><input type="reset"></td></tr>
+                                    </table>
+                                </span>
+
+                                </td>
+                            </tr>
+                            <!--<tr>-->
+                                <!--<td>-->
+                                <!--<div class="pages" align="center"> 共有 <b><?php echo $num; ?>条/<?php echo $pageTotal; ?>页 </b> <a class="first" href="index.php?p=Admin&c=Order&a=list&page=1">首页</a> <a class="prev" href="index.php?p=Admin&c=Order&a=list&page=<?php echo $lastPage ?>">上一页</a> <strong><?php echo $pageIndex; ?></strong> <a class="next" href="index.php?p=Admin&c=Order&a=list&page=<?php echo $nextPage ?>">下一页</a> <a class="last" href="index.php?p=Admin&c=Order&a=list&page=<?php echo $pageTotal ?>">末页</a> </div>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                        </table>
+                    </form>
+                    <?php endforeach;?>
+                </div>
+
+
+
+
+
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

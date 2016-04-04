@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="index.php?c=Plans&p=Admin&a=update" method="post">
+    <table border="1" cellspacing="0" align="center">
+        <th colspan="2">美发套餐信息修改</th>
+        <input type="hidden" name="plan_id" value="<?php echo $row['plan_id']?>" />
+        <tr><td>套餐名称：</td><td><input type="text" name="name" value="<?php echo $row['name']?>"></td></tr>
+        <tr><td>套餐描述：</td><td><input type="text" name="des" value="<?php echo $row['des']?>"></td></tr>
+        <tr><td>套餐金额：</td><td><input type="text" name="money" value="<?php echo $row['money']?>"></td></tr>
+        <tr><td>状态：</td><td>
+            <select name="status" >
+                <option>上线</option>
+                <option>下线</option>
+            </select>
+        </td></tr>
+        <tr><td colspan="2" align="center"><input type="submit"><input type="reset"></td></tr>
+    </table>
+</form>
+</body>
+</html>

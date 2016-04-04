@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<script>
+    function sub(elementId){
+        document.getElementById(elementId).action="index.php?p=Admin&c=WechatHwj&a=examineCode";
+    }
+</script>
+
+
+
+
+
+<body>
+    <form  id="222" action="index.php?p=Admin&c=WechatHwj&a=examinePhone" method="post">
+        <table>
+            <tr>
+                <td>请输入电话：</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="telephone" value="<?php echo empty($telephone)?'':$telephone;?>"></td>
+                <td><input type="submit" value="获取验证码"></td>
+            </tr>
+            <tr>
+                <td >验证码:<?php echo empty($bind)?"":$bind;?></td>
+                <input type="hidden" name="bind" value="<?php echo empty($bind)?'':$bind; ?>">
+            </tr>
+            <tr>
+                <td>请输验证码：</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="code" ></td>
+                <td><input type="submit" value="确认提交" onclick="sub('222')"></td>
+            </tr>
+        </table>
+        <input type="hidden" name="openid" value="<?php echo empty($telephone)?$_GET['openid']:$openid; ?>">
+
+    </form>
+
+
+
+</body>
+</html>

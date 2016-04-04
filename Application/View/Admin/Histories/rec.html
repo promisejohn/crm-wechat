@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form method="post" action="index.php?p=Admin&c=Histories&a=cz">
+        <table align="center" cellspacing="0" cellpadding="2" border="1">
+            <tr>
+                <th>充值金额：</th>
+                <td><input type="text" name="amount"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="充值">
+                <a href="index.php?c=Users&p=Admin&a=list"><input type="button" value="取消"></a></td>
+            </tr>
+
+        </table>
+        <input type="hidden" name="type" value='充值'>
+        <input type="hidden" name="user_id" value='<?php echo $row["user_id"]?>'>
+    </form>
+</body>
+</html>

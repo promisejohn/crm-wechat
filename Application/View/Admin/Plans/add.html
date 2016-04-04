@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="index.php?c=Plans&p=Admin&a=insert" method="post">
+<table border="1" align="center" cellspacing="0">
+    <tr>
+        <th colspan="6">新增美发套餐</th>
+    <tr><th>套餐名称:</th><th><input type="text" name="name"/></th></tr>
+    <tr><th>套餐描述:</th><th><textarea name="des"></textarea></th></tr>
+    <tr><th>套餐金额:</th><th><input type="text" name="money" /></th></tr>
+    <tr><th>状态:</th><th><select name="status">
+                    <option>上线</option>
+                    <option>下线</option>
+                 </select>
+        </th>
+    </tr>
+    <tr><th colspan="2"><input type="submit" value="添加" /><input type="reset"/></th></tr>
+</table>
+</form>
+</body>
+</html>

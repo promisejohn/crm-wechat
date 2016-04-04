@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>源代码教育</title>
+  <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+
+
+
+
+<body>
+
+
+<div class="main">
+  <div class="right">
+    <ul>
+      <li>
+        <div class="r_div" align="center">
+          <div  style="float:left">
+              <img src="./public/imges/base1.gif"/>排行榜
+          </div>
+        </div>
+
+
+
+
+
+        <div class="r_div1" >
+          <table align="center">
+            <tr class="tr1">
+              <td colspan="2" width="200">充值排行榜</td>
+              <td colspan="2" width="200">消费排行榜</td>
+              <td width="200">服务之星</td>
+            </tr>
+            <tr>
+              <td>顾客姓名</td>
+              <td>总充值金额</td>
+              <td>顾客姓名</td>
+              <td>总消费金额</td>
+              <td>员工姓名</td>
+            </tr>
+            <?php for($i=0;$i<3;$i++):?>
+            <tr>
+              <td><?php echo isset($cz[$i]["realname"])?$cz[$i]["realname"]:"" ?></td>
+              <td><?php echo isset($cz[$i]["amountall"])?$cz[$i]["amountall"]:"" ?></td>
+              <td><?php echo isset($xf[$i]["realname"])?$xf[$i]["realname"]:"" ?></td>
+              <td><?php echo isset($xf[$i]["amountall"])?$xf[$i]["amountall"]:"" ?></td>
+              <td><?php echo isset($yg[$i]["realname"])?$yg[$i]["realname"]:"" ?></td>
+            </tr>
+            <?php endfor?>
+
+          </table>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>

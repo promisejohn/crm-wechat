@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+<body>
+<div class="add_1" align="center">
+    <div class="d">账户添加</div>
+    <form method="post" action="index.php?p=Admin&c=Users&a=insert">
+        <table align="center" cellspacing="0" cellpadding="2" border="1">
+            <tr>
+                <td> 用户名&emsp;
+                    <input class="client_register_username" type="text" placeholder="请输入用户名" name="username">
+                </td>
+                <td>姓名&emsp;
+                    <input class="client_register_username" type="text" placeholder="请输入姓名" name="realname">
+                </td>
+                <td>电话&emsp;
+                    <input class="client_register_username" type="text" placeholder="请输入手机号" name="telephone">
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="添加"><a href="index.php?p=Admin&c=Users&a=list"><input type="button" value="取消"></a>
+    </form>
+</div>
+</body>
+</html>

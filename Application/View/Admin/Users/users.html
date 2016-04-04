@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+
+
+
+
+
+<body>
+<div class="main">
+    <div class="right">
+        <ul>
+            <li>
+                <div class="r_div" align="center">
+                    <div  style="float:left">
+                        <img src="./public/imges/base1.gif"/>会员管理
+                    </div>
+                    <span class="span1">
+                        <div  style="float:right">
+                            <a href="index.php?c=Users&p=Admin&a=add">[添加账户]</a>
+                        </div>
+                    </span>
+                </div>
+                <div class="r_div1" >
+                    <form method="post" action="index.php?p=Admin&c=Users&a=sel">
+
+                        <table>
+                            <tr class="tr1">
+                                <td width="50">ID</td>
+                                <td width="100">用户名</td>
+                                <td width="100">姓名</td>
+                                <td width="100">性别</td>
+                                <td width="150">电话</td>
+                                <td width="150">余额</td>
+                                <td width="300">操作</td>
+                            </tr>
+                            <?php foreach($rows as $row): ?>
+                            <tr>
+                                <td><?php echo $row['user_id']; ?></td>
+                                <td><?php echo $row['username']; ?></td>
+                                <td><?php echo $row['realname']; ?></td>
+                                <td ><?php echo $row['sex']; ?></td>
+                                <td><?php echo $row['telephone']; ?></td>
+                                <td><?php echo $row['money']; ?></td>
+                                <td><a href="index.php?p=Admin&c=Users&a=edit&user_id=<?php echo $row['user_id']?>">编辑</a> | <a href="index.php?p=Admin&c=Users&a=remove&user_id=<?php echo $row['user_id']?>" onclick="if(!confirm('您确定要删除吗？')) return false;">删除</a> | <a href="index.php?p=Admin&c=Histories&a=recandcon&user_id=<?php echo $row['user_id']?>">充值和消费</a></td>
+                            </tr>
+                            <?php endforeach; ?>
+                            <tr>
+                                <td colspan="4">可以根据用户名、姓名、性别等查询用户</td>
+                                <td colspan="1" align="right"><input type="text" name="sel"></td>
+                                <td colspan="2"><input type="submit" value="查询"></a></td>
+                            </tr>
+                        </table>
+
+                        <div class="pages" align="center"> 共有 <b><?php echo $num; ?>条/<?php echo $pageTotal; ?>页 </b> <a class="first" href="index.php?p=Admin&c=Users&a=list&page=1">首页</a> <a class="prev" href="index.php?p=Admin&c=Users&a=list&page=<?php echo $lastPage ?>">上一页</a> <strong><?php echo $pageIndex; ?></strong> <a class="next" href="index.php?p=Admin&c=Users&a=list&page=<?php echo $nextPage ?>">下一页</a> <a class="last" href="index.php?p=Admin&c=Users&a=list&page=<?php echo $pageTotal ?>">末页</a> </div>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>

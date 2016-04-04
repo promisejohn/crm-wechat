@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+<body>
+<div class="add_1">
+        <form>
+            <table align="center" cellspacing="0" cellpadding="2" border="1">
+                <tr>
+                    <th colspan="2">充值和消费</th>
+                </tr>
+                <tr>
+                    <td width="80px" class="td1">用户名&emsp;</td>
+                    <td class="td td1"><?php echo $row["username"]?></td>
+                </tr>
+                <tr>
+                    <td>姓名&emsp;</td>
+                    <td class="td"><?php echo $row["realname"]?></td>
+                </tr>
+                <tr>
+                    <td>电话&emsp;</td>
+                    <td class="td"><?php echo $row["telephone"]?></td>
+                </tr>
+                <tr>
+                    <td>余额&emsp;</td>
+                    <td class="td"><?php echo $row["money"]?></td>
+                </tr>
+                <tr>
+                    <td>操作&emsp;</td>
+                    <td class="td"><a href="index.php?p=Admin&c=Histories&a=rec&user_id=<?php echo $row['user_id']?>">充值</a> | <a href="index.php?p=Admin&c=Histories&a=cons&user_id=<?php echo $row['user_id']?>">消费</a> | <a href="index.php?p=Admin&c=Histories&a=sle&user_id=<?php echo $row['user_id']?>">记录查询</a></td>
+                </tr>
+            </table>
+        </form>
+</div>
+</body>
+</html>

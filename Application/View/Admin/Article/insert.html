@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<!--样式文件-->
+<link rel="stylesheet" href="./umeditor/themes/default/css/umeditor.css">
+<script src="./umeditor/third-party/jquery.min.js"></script>
+<script type="text/javascript" src="./umeditor/umeditor.config.js"></script>
+<script type="text/javascript" src="./umeditor/umeditor.js"></script>
+<script type="text/javascript" src="./umeditor/umeditor.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        window.um = UM.getEditor('container',{
+//            toolbar:['undo redo | bold italic underline']
+        });
+    });
+</script>
+
+
+
+<body>
+<form action="index.php?p=Admin&c=Article&a=insert" method="post">
+    <table align="center">
+        <tr>
+            <td width="80">活动标题:</td><td><input type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td>开始日期:</td><td><input type="date" name="start"></td>
+        </tr>
+        <tr>
+            <td>截至日期:</td><td><input type="date" name="end"></td>
+        </tr>
+        <tr>
+            <td>发布日期:</td><td><input type="date" name="time"></td>
+        </tr>
+        <tr>
+            <td colspan="2">活动类容:</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <script id="container" name="content" type="text/plain" style="width:600px;height:200px;"></script>
+            </td>
+        <tr>
+        <tr>
+            <td colspan="5" align="center">
+                <input type="submit">
+                <input type="reset">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

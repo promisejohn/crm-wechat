@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+<body>
+<div class="add_1">
+    <div class="d" align="center">会员编辑</div>
+    <form action='index.php?p=Admin&c=Users&a=update' method="post">
+        <input type="hidden" name="user_id" value='<?php echo $row["user_id"]?>'>
+        <table align="center" cellpadding="2" cellspacing="0">
+            <tr>
+                <td>用户名&emsp;
+                    <input class="client_register_username" type="text"  name="username" value='<?php echo $row["username"]?>'>
+                </td>
+            </tr>
+            <tr>
+                <td>姓名&emsp;&emsp;
+                    <input class="client_register_username" type="text"  name="realname" value='<?php echo $row["realname"]?>'>
+                </td>
+            </tr>
+            <tr>
+                <td>性别&emsp;&emsp;
+                    <input type="radio" name="sex" value="男" <?php if( $row["sex"]=="男") echo'checked="checked"' ;?>>男<input type="radio" name="sex" value="女" <?php if( $row["sex"]=="女") echo'checked="checked"' ;?>>女
+                </td>
+            </tr>
+            <tr>
+                <td>电话&emsp;&emsp;
+                    <input class="client_register_username" type="text"  name="telephone" value='<?php echo $row["telephone"]?>'>
+                </td>
+            </tr>
+            <tr>
+                <td>备注&emsp;&emsp;
+                    <textarea name="remark"><?php echo $row["remark"]?></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>是否VIP&ensp;
+                    <?php
+                        if( $row["is_vip"]==1){
+                            echo "是";
+                        }else{
+                            echo "否";
+                        }
+                    ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="确认">
+                </td>
+                <td align="center">
+                    <a href="index.php?c=Users&p=Admin&a=list"><input type="button" value="取消"></a>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+</body>
+</html>

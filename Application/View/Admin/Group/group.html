@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+<div class="main">
+    <div class="right">
+        <ul>
+            <li>
+                <div class="r_div" align="center">
+                    <div  style="float:left">
+                        <img src="./public/imges/base1.gif"/>部门管理
+                    </div>
+                    <span class="span1">
+                        <div  style="float:right">
+                            <a href="index.php?p=Admin&c=Group&a=add">[添加部门]</a>
+                        </div>
+                    </span>
+                </div>
+
+
+                <div class="r_div1">
+                    <table  align="center" width="400" height="300">
+                        <tr class="tr1">
+                            <th>组编号</th>
+                            <th>组名称</th>
+                            <th colspan="3">操作</th>
+                        </tr>
+                        <?php foreach($rows as $row): ?>
+                        <tr>
+                            <td><?php echo $row['group_id']; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><a href="index.php?p=Admin&c=Group&a=edit&group_id=<?php echo $row['group_id']?>">修改</a></td>
+                            <td><a href="index.php?p=Admin&c=Group&a=remove&group_id=<?php echo $row['group_id']?>" onclick="if(!confirm('您确定要删除吗？')) return false;">删除</a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

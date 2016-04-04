@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <table align="center" cellspacing="0" cellpadding="2" border="1">
+        <tr>
+            <th>会员id</th>
+            <th>用户名</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>电话</th>
+            <th>备注</th>
+            <th>余额</th>
+            <th>是否VIP</th>
+        </tr>
+        <?php foreach($rows as $row):?>
+        <tr>
+            <td><?php echo $row['user_id']; ?></td>
+            <td><?php echo $row['username']; ?></td>
+            <td><?php echo $row['realname']; ?></td>
+            <td><?php echo $row['sex']; ?></td>
+            <td><?php echo $row['telephone']; ?></td>
+            <td><?php echo $row['remark']; ?></td>
+            <td><?php echo $row['money']; ?></td>
+            <td><?php echo $row['is_vip']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</body>
+</html>

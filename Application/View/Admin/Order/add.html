@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+<div class="main">
+    <div class="right">
+        <ul>
+            <li>
+                <div class="r_div" align="center">
+                    <div  style="float:left">
+                        <img src="./public/imges/base1.gif"/>预约套餐
+                    </div>
+                </div>
+                <div class="r_div1">
+                    <form action="index.php?c=Order&p=Admin&a=insert" method="post">
+                        <table  align="center">
+                            <tr><td>电话：</td><td><input type="text" name="phone"></td></tr>
+                            <tr><td> 姓名：</td><td><input type="text" name="reallyName"></td></tr>
+                            <tr><td>美发师：</td><td><select name="realname">
+                                <?php foreach($row as $val): ?>
+                                <option value="<?php echo $val['realname']?>"><?php echo $val['realname']?></option>
+                                <?php endforeach ;?>
+                            </select></td></tr>
+                            <tr><td>套餐：</td><td><select name="name">
+                                <?php foreach($rows as $val): ?>
+                                <option value="<?php echo $val['name']?>"><?php echo $val['name']?></option>
+                                <?php endforeach ;?>
+                            </select></td></tr>
+                            <tr><td>备注：</td><td><textarea name="content"></textarea></td></tr>
+                            <tr><td>预约日期：</td><td><input type="datetime-local" name="date"></td></tr>
+                            <tr><td colspan="2" align="center"><input type="submit"><input type="reset"></td></tr>
+                        </table>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=freebinding" method="post">
+        <table>
+        <tr><td><input type="hidden" name="openid" value='<?php echo $openid ; ?>'></td></tr>
+        <tr><td><input type="hidden" name="phoneNum" value='<?php echo $phoneNum ; ?>'></td></tr>
+        <tr><td><input type="submit"><a href="http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=viewbinding"><input type="button" value="取消"></a></td></tr>
+        </table>
+    </form>
+</body>
+</html>

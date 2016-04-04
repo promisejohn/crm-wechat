@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+<div class="main">
+    <div class="right">
+        <ul>
+            <li>
+                <div class="r_div" align="center">
+                    <div  style="float:left">
+                        <img src="./public/imges/base1.gif"/>预约进度
+                    </div>
+                    <span class="span1">
+                        <div  style="float:right">
+                            <a href="index.php?p=Admin&c=article&a=showInsert">[添加活动]</a>
+                        </div>
+                    </span>
+                </div>
+
+
+                <div class="r_div1">
+
+                    <?php foreach($row as $val): ?>
+                        <form action="index.php?c=Order&p=Admin&a=remove" method="post">
+                            <span style="float:left;">
+                                <table align="center">
+                                    <tr class="tr1"><th>预约号：</th><th><input type="hidden" name="order_id" value="<?php echo $val['order_id']?>"><?php echo $val['order_id']?></th></tr>
+                                    <tr><td>电话：</td><td><?php echo $val['phone']?></td></tr>
+                                    <tr><td> 姓名：</td><td><?php echo $val['reallyName']?></td></tr>
+                                    <tr><td>美发师：</td><td><?php echo $val['realname']?></td></tr>
+                                    <tr><td>套餐：</td><td><?php echo $val['name']?></td></tr>
+                                    <tr><td>备注：</td><td><?php echo $val['content']?></td></tr>
+                                    <tr><td>预约日期：</td><td><?php echo $val['date']?></td></tr>
+                                    <tr><td>预约状态：</td><td><?php echo $val['status']?></td></tr>
+                                    <tr><td>回复信息：</td><td><?php echo $val['reply']?></td></tr>
+                                    <tr><td>删除：</td><td><input type="submit" value="确认删除"></td></tr>
+                                </table>
+                            </span>
+                        </form>
+                    <?php endforeach ;?>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

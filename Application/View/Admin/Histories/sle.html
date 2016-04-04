@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史记录表</title>
+</head>
+<body>
+    <table align="center" cellspacing="0" cellpadding="2" border="1">
+        <tr>
+            <th>消费编号</th>
+            <th>服务员工</th>
+            <th>类型</th>
+            <th>交易金额</th>
+            <th>消费内容</th>
+            <th>消费时间</th>
+            <th>余额</th>
+        </tr>
+        <?php foreach($rows as $row): ?>
+        <tr>
+            <th><?php echo $row['history_id']; ?></th>
+            <th><?php echo $row['username']; ?></th>
+            <th><?php echo $row['type']; ?></th>
+            <th><?php echo $row['amount']; ?></th>
+            <th><?php echo $row['content']; ?></th>
+            <th><?php echo $row['time']; ?></th>
+            <th><?php echo $row['remainder']; ?></th>
+        </tr>
+        <?php endforeach ;?>
+    </table>
+</body>
+</html>

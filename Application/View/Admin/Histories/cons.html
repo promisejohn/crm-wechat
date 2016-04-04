@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消费</title>
+</head>
+<body>
+<form action="index.php?p=Admin&c=Histories&a=xf" method="post">
+    <table align="center" cellspacing="0" cellpadding="2" border="1">
+        <tr>
+            <th>会员id：</th>
+            <td><?php echo $row["user_id"]?></td>
+        </tr>
+        <tr>
+            <th>用户名：</th>
+            <td><?php echo $row["username"]?></td>
+        </tr>
+        <tr>
+            <th>选择服务员工：</th>
+            <td>
+                    <select name="m_id">
+                        <?php foreach($mem as $member): ?>
+                            <option value="<?php echo $member['member_id']; ?>"><?php echo $member['username']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+            </td>
+        </tr>
+        <tr>
+            <th>选择消费内容：</th>
+            <td>
+                <select name="plan_id">
+                    <?php foreach($plan as $plans): ?>
+                    <option value="<?php echo $plans['plan_id']; ?>"><?php echo $plans['name']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2"><input type="submit" value="确认消费"><a href="index.php?c=Users&p=Admin&a=list"><input type="button" value="取消"></a></th>
+        </tr>
+    </table>
+    <input type="hidden" name="user_id" value='<?php echo $row["user_id"]?>'>
+    <input type="hidden" name="type" value='消费'>
+</form>
+</body>
+</html>

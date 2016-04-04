@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>源代码教育</title>
+  <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+<div class="main">
+  <div class="right">
+    <ul>
+      <li>
+        <div class="r_div" align="center">
+          <div  style="float:left">
+              <img src="./public/imges/base1.gif"/>活动管理
+          </div>
+          <span class="span1">
+            <div  style="float:right">
+              <a href="index.php?p=Admin&c=Article&a=showInsert">[添加活动]</a>
+            </div>
+          </span>
+        </div>
+
+
+        <div class="r_div1">
+          <table>
+            <tr class="tr1">
+              <td width="100">活动ID</td>
+              <td width="100">活动标题</td>
+              <td width="300">活动类容</td>
+              <td width="110">开始日期</td>
+              <td width="110">截至日期</td>
+              <td width="110">发布日期</td>
+              <td width="110">操作</td>
+            </tr>
+            <?php foreach($rows as $row):?>
+            <tr>
+              <td><?php echo $row["article_id"]?></td>
+              <td><?php echo $row["title"]?></td>
+              <td><?php echo $row["content"]?></td>
+              <td><?php echo $row["start"]?></td>
+              <td><?php echo $row["end"]?></td>
+              <td><?php echo $row["time"]?></td>
+              <td>
+                <a href="index.php?p=Admin&c=Article&a=showUpdate&id=<?php echo $row['article_id']?>">编辑</a>
+                |
+                <a href="index.php?p=Admin&c=Article&a=delete&id=<?php echo $row['article_id']?>" onclick="if(!confirm('您确定要删除吗？')){return false;}">删除</a>
+              </td>
+            </tr>
+            <?php endforeach?>
+          </table>
+
+
+          <div class="pages">
+            共有
+            <b>
+              <?php echo $num?>条/<?php echo $pageTotal ?>页
+            </b>
+            <a class="first" href="index.php?p=Admin&c=Article&a=list&page=1">首页</a>
+            <a class="prev" href="index.php?p=Admin&c=Article&a=list&page=<?php echo $pageIndex-1 ?>">上一页</a> <strong><?php echo $pageIndex?></strong>
+            <a class="next" href="index.php?p=Admin&c=Article&a=list&page=<?php echo $pageIndex+1 ?>">下一页</a>
+            <a class="last" href="index.php?p=Admin&c=Article&a=list&page=<?php echo $pageTotal ?>">末页</a>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+</body>
+</html>

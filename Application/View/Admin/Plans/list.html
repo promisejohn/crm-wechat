@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>源代码教育</title>
+    <link rel="StyleSheet" href="./public/css/style.css" type="text/css">
+</head>
+
+<body>
+<div class="main">
+    <div class="right">
+        <ul>
+            <li>
+                <div class="r_div" align="center">
+                    <div  style="float:left">
+                        <img src="./public/imges/base1.gif"/>套餐管理
+                    </div>
+          <span class="span1">
+            <div  style="float:right">
+                <a href="index.php?c=Plans&p=Admin&a=add">[添加套餐]</a>
+            </div>
+          </span>
+                </div>
+
+
+                <div class="r_div1">
+
+                    <table align="center">
+                        <tr class="tr1">
+                            <th>套餐id</th>
+                            <th>套餐名称</th>
+                            <th>套餐描述</th>
+                            <th>套餐金额</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        <?php foreach($row as $val): ?>
+                        <tr>
+                            <td><?php echo $val['plan_id'] ?></td>
+                            <td><?php echo $val['name'] ?></td>
+                            <td><?php echo $val['des'] ?></td>
+                            <td><?php echo $val['money'] ?></td>
+                            <td><?php echo $val['status'] ?></td>
+                            <td>
+                                <a href="index.php?c=Plans&p=Admin&a=edit&plan_id=<?php echo $val['plan_id'] ?>">修改</a>
+                                <a href="index.php?c=Plans&p=Admin&a=remove&id=<?php echo $val['plan_id'] ?>&name=<?php echo $val['name'] ?>">删除</a>
+                            </td>
+                        </tr>
+                        <?php endforeach ; ?>
+                        <tr>
+                            <td colspan="6" align="center">
+                                <form action="index.php?c=Plans&p=Admin&a=search" method="post">
+                                    <input type="text" name="search" value="请输入套餐名">
+                                    <input type="submit" value="搜索">
+                                    <input type="reset">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
