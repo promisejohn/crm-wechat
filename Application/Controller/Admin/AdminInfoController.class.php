@@ -14,7 +14,7 @@ class AdminInfoController extends PlatformController {
 
 
         if($row!=null){
-            session_start();
+            //session_start();
             $_SESSION["isLogin"]=true;
 
             $member_id =$row[0]["member_id"];//获取ID用于判断

@@ -12,7 +12,7 @@ class MainController extends PlatformController{
     //安全退出方法
     public function quitAction(){
         //清除session
-        session_start();
+        //session_start();
         $_SESSION["isLogin"]=true;
         unset($_SESSION["isLogin"]);//清除session信息
         session_destroy();//清除session文件

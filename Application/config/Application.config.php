@@ -2,10 +2,10 @@
 return array(
     "db"=>array(
         'host'=>"localhost",
-        'user'=>"root",
-        'password'=>"iean",
+        'user'=>"a0407210828",
+        'password'=>"f0b1cb6e",
         'port'=>"3306",
-        'dbName'=>"wechat",
+        'dbName'=>"a0407210828",
         'charset'=>"utf8",
         'pre'=>""
     ),
@@ -20,7 +20,7 @@ return array(
             "image/jpeg","image/png","image/gif"
         ),
         "max_size"=>2*1024*1024,
-        "prefix"=>"ft_"
+        "prefix"=>""
     )
 );
 

@@ -100,17 +100,17 @@ class WechatController extends Controller
                     foreach($articles as $article){
                         $data[] = Message::make('news_item')
                             ->title($article['title'])
-                            ->url('http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=viewArticle&article_id='.$article['article_id'])
+                            ->url('http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=viewArticle&article_id='.$article['article_id'])
                             ->picUrl('http://www.baidu.com/demo.jpg');
                     }
                     $news = Message::make('news')->items($data);
                     return $news;
                     break;
                 case '我要预约':
-                    return Message::make('text')->Content('点此预约http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=viewOrder');
+                    return Message::make('text')->Content('点此预约http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=viewOrder');
                     break;
                 case '消费记录':
-                    return Message::make('text')->Content('查看消费记录http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=consCal&openid='.$message['FromUserName']);
+                    return Message::make('text')->Content('查看消费记录http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=consCal&openid='.$message['FromUserName']);
                     break;
                 case '解除绑定':
                     //根据openid拿到对应的手机号
@@ -140,17 +140,17 @@ class WechatController extends Controller
                     foreach($articles as $article) {
                         $data[]= Message::make('news_item')
                             ->title($article['title'])
-                            ->url('http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=viewArticle&article_id='.$article['article_id'])
+                            ->url('http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=viewArticle&article_id='.$article['article_id'])
                             ->picUrl('http://www.baidu.com/demo.jpg');
                     }
                     $news = Message::make('news')->items($data);
                     return $news;
                     break;
                 case 'Binding'://绑定手机
-                    return Message::make('text')->content('点此绑定手机http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=viewBinding&openid='.$event['FromUserName']);
+                    return Message::make('text')->content('点此绑定手机http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=viewBinding&openid='.$event['FromUserName']);
                     break;
                 case 'ExpenseCalendar'://查看消费记录
-                    return Message::make('text')->Content('查看消费记录http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=consCal&openid='.$event['FromUserName']);
+                    return Message::make('text')->Content('查看消费记录http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=consCal&openid='.$event['FromUserName']);
                     break;
             }
 
@@ -168,7 +168,7 @@ class WechatController extends Controller
             $menu1 = new MenuItem("最新活动", 'click', 'Latest_Activity'),
             $menu2->buttons(array(
                 new MenuItem('绑定手机', 'click', 'Binding'),
-                new MenuItem('预约', 'view', 'http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=viewOrder'),
+                new MenuItem('预约', 'view', 'http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=viewOrder'),
                 new MenuItem('消费记录', 'click', 'ExpenseCalendar')
             ))
         );
@@ -294,7 +294,7 @@ class WechatController extends Controller
             //载入视图
             static::showView("sle");
         }else{
-            echo "您未绑定手机，请先绑定http://139.129.26.163/group13/vip/index.php?p=Admin&c=Wechat&a=viewBinding&openid='.$openid";
+            echo "您未绑定手机，请先绑定http://www.idoiwill.cn/index.php?p=Admin&c=Wechat&a=viewBinding&openid='.$openid";
         }
     }
 }
